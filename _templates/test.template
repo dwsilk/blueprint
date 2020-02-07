@@ -1,0 +1,54 @@
+{% for category in categories %}
+
+{{ category_descriptor }}: {{ category.name }}
+{# The following line creates a series of hyphens exactly the same length as the category title #}
+{% for n in category_descriptor %}-{% endfor %}--{% for n in category.name %}-{% endfor %}
+
+Description: {{ category.description }}
+
+{% for item in category.contains %}
+
+{{ item_descriptor }}: {{ item.name }}
+{# The following line creates a series of carats exactly the same length as the item title #}
+{% for n in item_descriptor %}^{% endfor %}^^{% for n in item.name %}^{% endfor %}
+
+Description: {{ item.description }}
+
+{# 
+    TABLE PREP
+    Create namespaces to hold column widths
+    Need Jinja2 >=v2.10 to use namespace()
+#}
+{% set nsna = namespace(name_char_length = 4) %}
+{% set nsda = namespace(data_char_length = 9) %}
+{% set nsde = namespace(desc_char_length = 11) %}
+{#
+    Check if any column values are longer than the table headers
+#}
+{% for column in item.contains %}
+{% if column.name | length > nsna.name_char_length %}
+{% set nsna.name_char_length = column.name | length %}
+{% endif %}
+{% if column.data_type | length > nsda.data_char_length %}
+{% set nsda.data_char_length = column.data_type | length %}
+{% endif %}
+{% if column.description | length > nsde.desc_char_length %}
+{% set nsde.desc_char_length = column.description | length %}
+{% endif %}
+{% endfor %}
+{# Create table dividers #}
+{% set name_table_def = '=' * (nsna.name_char_length + 2) %}
+{% set data_table_def = '=' * (nsda.data_char_length + 2) %}
+{% set desc_table_def = '=' * (nsde.desc_char_length + 2) %}
+{# 
+    CREATE ACTUAL TABLE
+#}
+{{ name_table_def }}  {{ data_table_def }}  ========  ===========  =======  {{ desc_table_def }}
+Name{{ ' ' * (nsna.name_char_length - 4 + 2) }}  Data Type{{ ' ' * (nsda.data_char_length - 9 + 2) }}  Length    Precision    Scale    Description{{ ' ' * (nsde.desc_char_length - 11 + 2) }}  
+{{ name_table_def }}  {{ data_table_def }}  ========  ===========  =======  {{ desc_table_def }}
+{% for column in item.contains %}
+{{ column.name }}{{ ' ' * (nsna.name_char_length - column.name | length + 2) }}  {{ column.data_type }}{{ ' ' * (nsda.data_char_length - column.data_type | length + 2) }}  {{ column.length }}{{ ' ' * (8 - column.length | length) }}  {{ column.precision }}{{ ' ' * (11 - column.precision | length) }}  {{ column.scale }}{{ ' ' * (7 - column.scale | length) }}  {{ column.description }}{{ ' ' * (nsde.desc_char_length - column.description | length + 2) }}    
+{% endfor %}
+{{ name_table_def }}  {{ data_table_def }}  ========  ===========  =======  {{ desc_table_def }}
+{% endfor %}
+{% endfor %}

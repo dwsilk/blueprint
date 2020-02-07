@@ -1,0 +1,7 @@
+[MASTER]
+disable =
+        bad-continuation,
+        invalid-name
+
+[FORMAT]
+max-line-length=127

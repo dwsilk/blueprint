@@ -1,0 +1,37 @@
+[tool.black]
+line-length = 127
+
+[tool.isort]
+line_length = 127
+case_sensitive = true
+use_parentheses = true
+include_trailing_comma = true
+multi_line_output = 3
+force_grid_wrap = 0
+
+[tool.poetry]
+name = "blueprint"
+version = "0.1.0"
+description = "Generate data dictionaties from a spatial data source."
+authors = ["dwsilk <dsilk@linz.govt.nz>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.6"
+click = "^7.0"
+colorama = "^0.4.3"
+jinja2 = "^2.11.1"
+pyyaml = "^5.3"
+fiona = "^1.8.11"
+
+[tool.poetry.dev-dependencies]
+black = "^19.10b0"
+gitlint = "^0.12.0"
+isort = "^4.3.21"
+pre-commit = "^2.0.1"
+pylint = "^2.4.4"
+pytest = "^5.3.5"
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
