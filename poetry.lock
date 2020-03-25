@@ -8,12 +8,11 @@ version = "1.4.3"
 
 [[package]]
 category = "dev"
-description = "Better dates and times for Python"
-marker = "python_version != \"3.4\""
+description = "Better dates & times for Python"
 name = "arrow"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
-version = "0.14.2"
+version = "0.15.5"
 
 [package.dependencies]
 python-dateutil = "*"
@@ -137,9 +136,8 @@ click = ">=4.0,<8"
 test = ["pytest-cov"]
 
 [[package]]
-category = "dev"
+category = "main"
 description = "Cross-platform colored terminal text."
-marker = "sys_platform == \"win32\""
 name = "colorama"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
@@ -173,15 +171,12 @@ description = "Git commit message linter written in python, checks your commit m
 name = "gitlint"
 optional = false
 python-versions = "*"
-version = "0.12.0"
+version = "0.13.1"
 
 [package.dependencies]
 Click = "7.0"
+arrow = "0.15.5"
 sh = "1.12.14"
-
-[package.dependencies.arrow]
-python = "<3.4.0 || >=3.5.0"
-version = "0.14.2"
 
 [[package]]
 category = "dev"
@@ -422,7 +417,6 @@ testing = ["argcomplete", "hypothesis (>=3.56)", "mock", "nose", "requests", "xm
 [[package]]
 category = "dev"
 description = "Extensions to the standard Python datetime module"
-marker = "python_version != \"3.4\""
 name = "python-dateutil"
 optional = false
 python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,>=2.7"
@@ -522,7 +516,7 @@ docs = ["sphinx", "jaraco.packaging (>=3.2)", "rst.linker (>=1.9)"]
 testing = ["jaraco.itertools"]
 
 [metadata]
-content-hash = "99516628e998ddeb6f8b81a51c11cb37024721e5d756b33b4ffda22a95fcbeae"
+content-hash = "c238102b1f5cb4239bdcd63ed2f8ed0c527e3e357250a05254868e38cb573bdb"
 python-versions = "^3.6"
 
 [metadata.files]
@@ -531,8 +525,8 @@ appdirs = [
     {file = "appdirs-1.4.3.tar.gz", hash = "sha256:9e5896d1372858f8dd3344faf4e5014d21849c756c8d5701f78f8a103b372d92"},
 ]
 arrow = [
-    {file = "arrow-0.14.2-py2.py3-none-any.whl", hash = "sha256:03404b624e89ac5e4fc19c52045fa0f3203419fd4dd64f6e8958c522580a574a"},
-    {file = "arrow-0.14.2.tar.gz", hash = "sha256:41be7ea4c53c2cf57bf30f2d614f60c411160133f7a0a8c49111c30fb7e725b5"},
+    {file = "arrow-0.15.5-py2.py3-none-any.whl", hash = "sha256:70729bcc831da496ca3cb4b7e89472c8e2d27d398908155e0796179f6d2d41ee"},
+    {file = "arrow-0.15.5.tar.gz", hash = "sha256:5390e464e2c5f76971b60ffa7ee29c598c7501a294bc9f5e6dadcb251a5d027b"},
 ]
 "aspy.yaml" = [
     {file = "aspy.yaml-1.3.0-py2.py3-none-any.whl", hash = "sha256:463372c043f70160a9ec950c3f1e4c3a82db5fca01d334b6bc89c7164d744bdc"},
@@ -589,8 +583,8 @@ fiona = [
     {file = "Fiona-1.8.13.tar.gz", hash = "sha256:5ec34898c8b983a723fb4e949dd3e0ed7e691c303e51f6bfd61e52ac9ac813ae"},
 ]
 gitlint = [
-    {file = "gitlint-0.12.0-py2.py3-none-any.whl", hash = "sha256:93d6319ec1d34591a9efd563ba5899c1e28f8f768b130b8f6ff65ca880a2a607"},
-    {file = "gitlint-0.12.0.tar.gz", hash = "sha256:b8040eec546d3ec099ab7723a1d6ac6c9ba8ad797dcc7c5aaf58afb2deab378c"},
+    {file = "gitlint-0.13.1-py2.py3-none-any.whl", hash = "sha256:bf6589963218d8a27978e969474268854fc07e0db2731791d663dbfee0617482"},
+    {file = "gitlint-0.13.1.tar.gz", hash = "sha256:757e368f62a7aeedb4f1f26c3d71b27c8a18aa193acf6e7aedca7567536f835f"},
 ]
 identify = [
     {file = "identify-1.4.11-py2.py3-none-any.whl", hash = "sha256:1222b648251bdcb8deb240b294f450fbf704c7984e08baa92507e4ea10b436d5"},
