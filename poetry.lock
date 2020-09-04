@@ -137,9 +137,8 @@ click = ">=4.0,<8"
 test = ["pytest-cov"]
 
 [[package]]
-category = "dev"
+category = "main"
 description = "Cross-platform colored terminal text."
-marker = "sys_platform == \"win32\""
 name = "colorama"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
@@ -151,7 +150,7 @@ description = "Fiona reads and writes spatial data files"
 name = "fiona"
 optional = false
 python-versions = "*"
-version = "1.8.13"
+version = "1.8.15"
 
 [package.dependencies]
 attrs = ">=17"
@@ -162,7 +161,7 @@ munch = "*"
 six = ">=1.7"
 
 [package.extras]
-all = ["pytest-cov", "boto3 (>=1.2.4)", "pytest (>=3)", "shapely", "mock"]
+all = ["pytest (>=3)", "boto3 (>=1.2.4)", "pytest-cov", "shapely", "mock"]
 calc = ["shapely"]
 s3 = ["boto3 (>=1.2.4)"]
 test = ["pytest (>=3)", "pytest-cov", "boto3 (>=1.2.4)", "mock"]
@@ -522,7 +521,8 @@ docs = ["sphinx", "jaraco.packaging (>=3.2)", "rst.linker (>=1.9)"]
 testing = ["jaraco.itertools"]
 
 [metadata]
-content-hash = "99516628e998ddeb6f8b81a51c11cb37024721e5d756b33b4ffda22a95fcbeae"
+content-hash = "9289e79feaf2652012054f50122cf17d357ff5c0faa196c2c854eb0095547a9d"
+lock-version = "1.0"
 python-versions = "^3.6"
 
 [metadata.files]
@@ -576,17 +576,16 @@ colorama = [
     {file = "colorama-0.4.3.tar.gz", hash = "sha256:e96da0d330793e2cb9485e9ddfd918d456036c7149416295932478192f4436a1"},
 ]
 fiona = [
-    {file = "Fiona-1.8.13-cp27-cp27m-macosx_10_6_intel.whl", hash = "sha256:621d2230663f3fb95d60249e27fc8e2a6e456dc85f96bbfa9882a6b0a4ce0d1f"},
-    {file = "Fiona-1.8.13-cp27-cp27mu-manylinux1_x86_64.whl", hash = "sha256:976e91e056e818720510984970ec33f26b9744cdf52e586e08217bf34bfcb41e"},
-    {file = "Fiona-1.8.13-cp35-cp35m-macosx_10_6_intel.whl", hash = "sha256:5f39bdf39421d79c22ae0b4e0e1169820812941206446b2294e6ca40646708fc"},
-    {file = "Fiona-1.8.13-cp35-cp35m-manylinux1_x86_64.whl", hash = "sha256:3104311faeb10dc80e00c46734a92275d67efabe1fd6e835fec8a6f77c0920bf"},
-    {file = "Fiona-1.8.13-cp36-cp36m-macosx_10_6_intel.whl", hash = "sha256:b771a58e6b93357096934fa26d65d0cf308345340d694e4d346d3b39879e265c"},
-    {file = "Fiona-1.8.13-cp36-cp36m-manylinux1_x86_64.whl", hash = "sha256:5567efdba15eea935c581db94f3980ecbccecb4a7a5cd79651c8aed41c70a0fa"},
-    {file = "Fiona-1.8.13-cp37-cp37m-macosx_10_6_intel.whl", hash = "sha256:9347c2b8950575014ec233f6191e52d03ef68a5bb759a53a621b095610650a50"},
-    {file = "Fiona-1.8.13-cp37-cp37m-manylinux1_x86_64.whl", hash = "sha256:0742177422d20f72e69e499886f96e1cbf5ce0c9752f8320a05eddcb0f1c576a"},
-    {file = "Fiona-1.8.13-cp38-cp38-macosx_10_9_x86_64.whl", hash = "sha256:83314cf2cbe50df24c290d241681964adf6fe9c0ba33a0a0f980a5f44008296b"},
-    {file = "Fiona-1.8.13-cp38-cp38-manylinux1_x86_64.whl", hash = "sha256:f0adf55192ac715c1ac7a19ff1aacd667ffe251df0e09b9a6feeddce45849f17"},
-    {file = "Fiona-1.8.13.tar.gz", hash = "sha256:5ec34898c8b983a723fb4e949dd3e0ed7e691c303e51f6bfd61e52ac9ac813ae"},
+    {file = "Fiona-1.8.15-cp27-cp27mu-manylinux1_x86_64.whl", hash = "sha256:cf4090cfc0fae7e386b9af7a84ee95393e3f8c2187e148bea2a317814bd0c584"},
+    {file = "Fiona-1.8.15-cp35-cp35m-macosx_10_9_intel.whl", hash = "sha256:e7a77e8a65f216345411aa31246dea547a20167110db92554f0b002642540525"},
+    {file = "Fiona-1.8.15-cp35-cp35m-manylinux1_x86_64.whl", hash = "sha256:2a35818799fb95834e36834f8015197ee7dbbaf5a9a3888b67a79be519564e0a"},
+    {file = "Fiona-1.8.15-cp36-cp36m-macosx_10_9_x86_64.whl", hash = "sha256:5a9b379d2e3dab8b145ca0fe5ae56ae915c7afd0893b4659e393ab2ac74b52f0"},
+    {file = "Fiona-1.8.15-cp36-cp36m-manylinux1_x86_64.whl", hash = "sha256:9f8c111a4ddad913cc8c48a3664ef81299b56e04d9a4fa71ab0e9909df1c15e4"},
+    {file = "Fiona-1.8.15-cp37-cp37m-macosx_10_9_x86_64.whl", hash = "sha256:6d9997aa61fcc742f11448962c0fc6cd20c8c5773188996a37ccb784a5759228"},
+    {file = "Fiona-1.8.15-cp37-cp37m-manylinux1_x86_64.whl", hash = "sha256:4390e27527941d6233878565413bbb8198d0964115ffa06ef3bb0740cb9048e5"},
+    {file = "Fiona-1.8.15-cp38-cp38-macosx_10_9_x86_64.whl", hash = "sha256:c98ef6eb1056e646ed1a79f1c86ccefdc5d8d9614952d02231a47f21c32006ee"},
+    {file = "Fiona-1.8.15-cp38-cp38-manylinux1_x86_64.whl", hash = "sha256:ee8458857ce2a2b44c42c7918fd4518331df906d3f1571ec2f89821a8473267f"},
+    {file = "Fiona-1.8.15.tar.gz", hash = "sha256:3b1c9b5c834fae2fe947cfaea176db890bc6750d1a6ba9f54d969c19ffcd191e"},
 ]
 gitlint = [
     {file = "gitlint-0.12.0-py2.py3-none-any.whl", hash = "sha256:93d6319ec1d34591a9efd563ba5899c1e28f8f768b130b8f6ff65ca880a2a607"},
@@ -684,6 +683,7 @@ munch = [
 ]
 nodeenv = [
     {file = "nodeenv-1.3.5-py2.py3-none-any.whl", hash = "sha256:5b2438f2e42af54ca968dd1b374d14a1194848955187b0e5e4be1f73813a5212"},
+    {file = "nodeenv-1.3.5.tar.gz", hash = "sha256:7389d06a7ea50c80ca51eda1b185db7b9ec38af1304d12d8b8299d6218486e91"},
 ]
 packaging = [
     {file = "packaging-20.1-py2.py3-none-any.whl", hash = "sha256:170748228214b70b672c581a3dd610ee51f733018650740e98c7df862a583f73"},
