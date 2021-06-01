@@ -22,7 +22,7 @@ click = "^7.0"
 colorama = "^0.4.3"
 jinja2 = "^2.11.1"
 pyyaml = "^5.3"
-fiona = "^1.8.11"
+fiona = "^1.8.20"
 
 [tool.poetry.dev-dependencies]
 black = "^19.10b0"
